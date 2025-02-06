@@ -1,0 +1,14 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dss-challenge
+  description: Design System Services Challenge
+  tags:
+    - design
+    - ux
+    - javascript
+spec:
+  type: library
+  lifecycle: experimental
+  owner: design-system-services
