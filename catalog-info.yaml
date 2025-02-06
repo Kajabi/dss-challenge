@@ -31,8 +31,6 @@ metadata:
   description: Design System Services Challenge Local Development Env & CI/CD
   tags:
     - javascript
-    - lerna
-    - monorepo
   annotations:
     github.com/project-slug: Kajabi/dss-challenge
 spec:
