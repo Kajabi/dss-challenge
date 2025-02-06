@@ -1,0 +1,47 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: dss-challenge
+  description: Design System Services Challenge
+  tags:
+    - design
+    - ux
+spec:
+  owner: user-experience
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dss-challenge
+  description: Design System Services Challenge
+  tags:
+    - design
+    - ux
+    - javascript
+spec:
+  type: library
+  lifecycle: production
+  owner: user-experience
+  system: dss-challenge
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dss-challenge.framework
+  description: Design System Services Challenge Local Development Env & CI/CD
+  tags:
+    - javascript
+    - lerna
+    - monorepo
+  annotations:
+    github.com/project-slug: Kajabi/dss-challenge
+spec:
+  type: tool
+  lifecycle: production
+  owner: user-experience
+  system: dss-challenge
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: dss-challenge.mono-repo
