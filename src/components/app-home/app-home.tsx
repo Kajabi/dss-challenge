@@ -1,5 +1,5 @@
-import { Component, h } from '@stencil/core';
-import { Router } from "../../";
+import { Component, Prop, h } from '@stencil/core';
+import { Router } from '../../';
 
 @Component({
   tag: 'app-home',
@@ -7,6 +7,8 @@ import { Router } from "../../";
   shadow: true,
 })
 export class AppHome {
+  @Prop() myLocation: string;
+
   render() {
     return (
       <div class="app-home">
@@ -14,11 +16,16 @@ export class AppHome {
           Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil! Check out our docs on{' '}
           <a href="https://stenciljs.com">stenciljs.com</a> to get started.
         </p>
-        <button
-          onClick={() => Router.push('/profile/stencil')}
+        <app-button
+          variant="secondary"
+          kajabiClick={event => {
+            console.log(event);
+          }}
         >
           Profile Page
-        </button>
+        </app-button>
+        {/* <button onClick={() => Router.push('/profile/stencil')}>Profile Page</button> */}
+        {this.myLocation}
       </div>
     );
   }
