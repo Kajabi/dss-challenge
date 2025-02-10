@@ -5,7 +5,9 @@ describe('app-button', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [AppButton],
-      html: `<app-button></app-button>`,
+      html: `<app-button>
+      <slot></slot>
+      </app-button>`,
     });
     expect(page.root).toEqualHtml(`
       <app-button>

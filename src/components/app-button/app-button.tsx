@@ -12,8 +12,12 @@ export class AppButton {
     return (
       <Host>
         <button class={`btn-${this.variant}`}>
-          {this.variant}
-          <slot name="label">{this.label}</slot>
+          <div class="button-content">
+            {this.variant}
+            <div>
+              <slot name="label">{this.label}</slot>
+            </div>
+          </div>
         </button>
       </Host>
     );

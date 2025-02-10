@@ -16,3 +16,8 @@
   background-color: black;
   color: white;
 }
+
+.button-content {
+  display: flex;
+  gap: 8px;
+}
