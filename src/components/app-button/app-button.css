@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+::slotted([slot='label'])
+{
+  display: flex;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: red;
+  color: white;
+}
+.btn-secondary {
+  background-color: black;
+  color: white;
+}
+
+.button-content {
+  display: flex;
+  gap: 8px;
+}
