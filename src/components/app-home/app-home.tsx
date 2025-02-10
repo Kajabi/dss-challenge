@@ -19,6 +19,10 @@ export class AppHome {
         >
           Profile Page
         </button>
+
+        <app-button label='Machado' variant='primary'>
+          Rudis
+        </app-button>
       </div>
     );
   }
