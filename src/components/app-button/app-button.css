@@ -1,0 +1,10 @@
+.primary { 
+    color: red;
+}
+.secondary { 
+    color: black;
+}
+.primary,
+.secondary {
+  border-radius: 100%;
+}
