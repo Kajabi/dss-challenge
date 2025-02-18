@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+.primary {
+  color: white;
+  background-color: var(--button-primary-bg-color);
+}
+.primary:hover {
+  color: white;
+  background-color: var(--button-primary-bg-color-hover);
+}
+
+.secondary {
+  color: black;
+  background-color: var(--button-secondary-bg-color);
+}
+.secondary:hover {
+  color: grey;
+  background-color: var(--button-secondary-bg-color-hover);
+}
