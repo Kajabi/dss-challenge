@@ -17,7 +17,7 @@ export class AppButton {
     return (
       <Host>
         <button class={`button ${this.variant}`}>
-          testing
+          <slot></slot>
         </button>
       </Host>
     );
