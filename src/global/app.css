@@ -21,9 +21,17 @@ body {
   --primary-bg-color: var(--color-blue);
   --secondary-bg-color: var(--color-grey);
 
+  --font-size-sm: 8px;
+  --font-size-md: 20px;
+  --font-size-lg: 36px;
+
   /* Semantic */
   --button-primary-bg-color: var(--primary-bg-color);
   --button-primary-bg-color-hover: darkblue;
   --button-secondary-bg-color: var(--secondary-bg-color);
   --button-secondary-bg-color-hover: #ccc;
+
+  --button-font-size-sm: var(--font-size-sm);
+  --button-font-size-md: var(--font-size-md);
+  --button-font-size-lg: var(--font-size-lg);
 }

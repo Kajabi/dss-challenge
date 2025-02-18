@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppButton {
+        "size": 'sm' | 'md' | 'lg';
         "variant": 'primary' | 'secondary';
     }
     interface AppHome {
@@ -67,6 +68,7 @@ declare global {
 declare namespace LocalJSX {
     interface AppButton {
         "onKajabiClick"?: (event: AppButtonCustomEvent<any>) => void;
+        "size"?: 'sm' | 'md' | 'lg';
         "variant"?: 'primary' | 'secondary';
     }
     interface AppHome {

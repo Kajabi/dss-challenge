@@ -26,3 +26,16 @@ button {
   color: grey;
   background-color: var(--button-secondary-bg-color-hover);
 }
+
+.sm {
+  font-size: var(--button-font-size-sm);
+  line-height: var(--button-font-size-sm);
+}
+.md {
+  font-size: var(--button-font-size-md);
+  line-height: var(--button-font-size-md);
+}
+.lg {
+  font-size: var(--button-font-size-lg);
+  line-height: var(--button-font-size-lg);
+}

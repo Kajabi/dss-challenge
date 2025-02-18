@@ -20,8 +20,9 @@ export class AppHome {
           Profile Page
         </button> */}
 
+        <app-button size="sm" variant='secondary'>Hello World</app-button>
         <app-button>Hello World</app-button>
-        <app-button variant='secondary'>Hello World</app-button>
+        <app-button size="lg" variant='secondary'>Hello World</app-button>
       </div>
     );
   }

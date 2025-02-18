@@ -7,6 +7,7 @@ import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 })
 export class AppButton {
   @Prop() variant: 'primary' | 'secondary' = 'primary'
+  @Prop() size: 'sm' | 'md' | 'lg' = 'md'
 
   @Event() kajabiClick: EventEmitter;
 
@@ -19,7 +20,7 @@ export class AppButton {
   render() {
     return (
       <Host>
-        <button onClick={() => this.handleClick()} class={`button ${this.variant}`}>
+        <button onClick={() => this.handleClick()} class={`button ${this.variant} ${this.size}`}>
           <slot></slot>
         </button>
       </Host>
