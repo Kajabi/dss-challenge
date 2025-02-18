@@ -1,4 +1,4 @@
-import { Component, Host, Listen, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'app-button',
@@ -6,17 +6,20 @@ import { Component, Host, Listen, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class AppButton {
-  @Listen('click')
-  handleClick() {
-    console.log('fired!')
-  }
-
   @Prop() variant: 'primary' | 'secondary' = 'primary'
+
+  @Event() kajabiClick: EventEmitter;
+
+  handleClick() {
+    this.kajabiClick.emit();
+
+    console.log('event fired');
+  }
 
   render() {
     return (
       <Host>
-        <button class={`button ${this.variant}`}>
+        <button onClick={() => this.handleClick()} class={`button ${this.variant}`}>
           <slot></slot>
         </button>
       </Host>

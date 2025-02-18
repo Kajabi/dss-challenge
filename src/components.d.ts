@@ -17,8 +17,23 @@ export namespace Components {
     interface AppRoot {
     }
 }
+export interface AppButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAppButtonElement;
+}
 declare global {
+    interface HTMLAppButtonElementEventMap {
+        "kajabiClick": any;
+    }
     interface HTMLAppButtonElement extends Components.AppButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAppButtonElementEventMap>(type: K, listener: (this: HTMLAppButtonElement, ev: AppButtonCustomEvent<HTMLAppButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAppButtonElementEventMap>(type: K, listener: (this: HTMLAppButtonElement, ev: AppButtonCustomEvent<HTMLAppButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAppButtonElement: {
         prototype: HTMLAppButtonElement;
@@ -51,6 +66,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppButton {
+        "onKajabiClick"?: (event: AppButtonCustomEvent<any>) => void;
         "variant"?: 'primary' | 'secondary';
     }
     interface AppHome {
