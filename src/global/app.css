@@ -13,3 +13,25 @@ body {
   padding: 0px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
+
+:root {
+  --color-blue: blue;
+  --color-grey: #c2c2c2;
+
+  --primary-bg-color: var(--color-blue);
+  --secondary-bg-color: var(--color-grey);
+
+  --font-size-sm: 8px;
+  --font-size-md: 20px;
+  --font-size-lg: 36px;
+
+  /* Semantic */
+  --button-primary-bg-color: var(--primary-bg-color);
+  --button-primary-bg-color-hover: darkblue;
+  --button-secondary-bg-color: var(--secondary-bg-color);
+  --button-secondary-bg-color-hover: #ccc;
+
+  --button-font-size-sm: var(--font-size-sm);
+  --button-font-size-md: var(--font-size-md);
+  --button-font-size-lg: var(--font-size-lg);
+}

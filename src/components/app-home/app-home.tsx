@@ -10,7 +10,7 @@ export class AppHome {
   render() {
     return (
       <div class="app-home">
-        <p>
+        {/* <p>
           Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil! Check out our docs on{' '}
           <a href="https://stenciljs.com">stenciljs.com</a> to get started.
         </p>
@@ -18,7 +18,11 @@ export class AppHome {
           onClick={() => Router.push('/profile/stencil')}
         >
           Profile Page
-        </button>
+        </button> */}
+
+        <app-button size="sm" variant='secondary'>Hello World</app-button>
+        <app-button>Hello World</app-button>
+        <app-button size="lg" variant='secondary'>Hello World</app-button>
       </div>
     );
   }

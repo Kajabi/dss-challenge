@@ -6,6 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppButton {
+        "size": 'sm' | 'md' | 'lg';
+        "variant": 'primary' | 'secondary';
+    }
     interface AppHome {
     }
     interface AppProfile {
@@ -14,7 +18,28 @@ export namespace Components {
     interface AppRoot {
     }
 }
+export interface AppButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAppButtonElement;
+}
 declare global {
+    interface HTMLAppButtonElementEventMap {
+        "kajabiClick": any;
+    }
+    interface HTMLAppButtonElement extends Components.AppButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAppButtonElementEventMap>(type: K, listener: (this: HTMLAppButtonElement, ev: AppButtonCustomEvent<HTMLAppButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAppButtonElementEventMap>(type: K, listener: (this: HTMLAppButtonElement, ev: AppButtonCustomEvent<HTMLAppButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAppButtonElement: {
+        prototype: HTMLAppButtonElement;
+        new (): HTMLAppButtonElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
@@ -34,12 +59,18 @@ declare global {
         new (): HTMLAppRootElement;
     };
     interface HTMLElementTagNameMap {
+        "app-button": HTMLAppButtonElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppButton {
+        "onKajabiClick"?: (event: AppButtonCustomEvent<any>) => void;
+        "size"?: 'sm' | 'md' | 'lg';
+        "variant"?: 'primary' | 'secondary';
+    }
     interface AppHome {
     }
     interface AppProfile {
@@ -48,6 +79,7 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface IntrinsicElements {
+        "app-button": AppButton;
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
@@ -57,6 +89,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-button": LocalJSX.AppButton & JSXBase.HTMLAttributes<HTMLAppButtonElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
